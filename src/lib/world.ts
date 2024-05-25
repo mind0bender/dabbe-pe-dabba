@@ -11,7 +11,14 @@ export default class World {
     this.p5 = p5;
     this.dim = dim;
     this.tileSize = this.p5.width / dim;
-    this.tiles = new Array(dim).fill(new Array(dim).fill(new Tile(this.p5)));
+    this.tiles = [];
+    for (let j: number = 0; j < dim; j++) {
+      const row: Tile[] = [];
+      for (let i: number = 0; i < dim; i++) {
+        row.push(new Tile(p5));
+      }
+      this.tiles.push(row);
+    }
   }
   public show(): void {
     for (let j: number = 0; j < this.dim; j++) {

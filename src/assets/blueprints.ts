@@ -63,10 +63,10 @@ export const MID_SOC = new Socket(3, 0, 1, 0);
 export default function createAllBlocks(p5: P5): Block[] {
   const allBlocks: Block[] = [
     new Block(p5, blankShow, [BLANK_SOC, BLANK_SOC, BLANK_SOC, BLANK_SOC]),
-    new Block(p5, upShow, [MID_SOC, BLANK_SOC, BLANK_SOC, BLANK_SOC]),
-    new Block(p5, rightShow, [BLANK_SOC, MID_SOC, BLANK_SOC, BLANK_SOC]),
-    new Block(p5, leftShow, [BLANK_SOC, BLANK_SOC, BLANK_SOC, MID_SOC]),
-    new Block(p5, downShow, [BLANK_SOC, BLANK_SOC, MID_SOC, BLANK_SOC]),
+    new Block(p5, upShow, [MID_SOC, MID_SOC, MID_SOC, BLANK_SOC]),
+    new Block(p5, rightShow, [MID_SOC, MID_SOC, BLANK_SOC, MID_SOC]),
+    new Block(p5, leftShow, [MID_SOC, BLANK_SOC, MID_SOC, MID_SOC]),
+    new Block(p5, downShow, [BLANK_SOC, MID_SOC, MID_SOC, MID_SOC]),
   ];
 
   return allBlocks;

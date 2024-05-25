@@ -1,5 +1,6 @@
 import P5 from "p5";
 import Socket from "./socket";
+import { DOWN, POS, UP } from "../helpers/constants";
 
 export default class Block {
   private p5: P5;
@@ -27,9 +28,10 @@ export default class Block {
     this.p5.stroke("#2fa");
     this.showFn(this.p5, x, y, w, weight);
   }
-  public match(block: Block, pos: number) {
-    for (let i: number = 0; i < 4; i++) {
-      // TODO: check if all sockets match with the neighbour block
-    }
+  public match(block: Block, pos: POS): boolean {
+    console.table(this.sockets[pos]);
+    console.table(block.sockets);
+    console.log(pos, Socket.getNeighbourPos(pos));
+    return this.sockets[pos].match(block.sockets[Socket.getNeighbourPos(pos)]);
   }
 }

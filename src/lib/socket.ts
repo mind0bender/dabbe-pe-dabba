@@ -1,3 +1,5 @@
+import { DOWN, LEFT, POS, RIGHT, UP } from "../helpers/constants";
+
 export default class Socket {
   private socs: number[];
   private count: number;
@@ -18,5 +20,17 @@ export default class Socket {
       }
     }
     return true;
+  }
+  static getNeighbourPos(pos: POS): POS {
+    switch (pos) {
+      case UP:
+        return DOWN;
+      case RIGHT:
+        return LEFT;
+      case LEFT:
+        return RIGHT;
+      case DOWN:
+        return UP;
+    }
   }
 }

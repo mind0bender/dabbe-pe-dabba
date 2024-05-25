@@ -1,5 +1,6 @@
-export const BLANK = 0;
-export const UP = 1;
-export const RIGHT = 2;
-export const LEFT = 3;
-export const DOWN = 4;
+export const UP = 0;
+export const RIGHT = 1;
+export const LEFT = 2;
+export const DOWN = 3;
+
+export type POS = typeof UP | typeof RIGHT | typeof LEFT | typeof DOWN;

@@ -8,7 +8,7 @@ export default class Tile {
   private possibleBlocks: Block[];
   constructor(p5: P5) {
     this.p5 = p5;
-    this.possibleBlocks = createAllBlocks(p5);
+    this.possibleBlocks = [p5.random(createAllBlocks(p5))];
     this.isCollapsed = true;
   }
 
@@ -21,5 +21,11 @@ export default class Tile {
       this.p5.stroke(255);
       this.p5.rect(x, y, w);
     }
+  }
+  getCollapsed(): Block | null {
+    if (this.isCollapsed) {
+      return this.possibleBlocks[0];
+    }
+    return null;
   }
 }
