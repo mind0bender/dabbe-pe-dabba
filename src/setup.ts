@@ -3,7 +3,7 @@ import World from "./lib/world";
 import Block from "./lib/block";
 import createAllBlocks from "./assets/blueprints";
 
-let allBlocks: Block[];
+export let allBlocks: Block[];
 export let world: World;
 
 export default function setup(p5: P5): void {

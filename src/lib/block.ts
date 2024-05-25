@@ -1,6 +1,6 @@
 import P5 from "p5";
 import Socket from "./socket";
-import { DOWN, POS, UP } from "../helpers/constants";
+import { POS } from "../helpers/constants";
 
 export default class Block {
   private p5: P5;
